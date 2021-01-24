@@ -1,0 +1,87 @@
+.header {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  padding: 7px 30px;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background: white;
+
+  @media screen and (max-width: 800px) {
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 7px 15px;
+  }
+}
+
+// .brand-logo {
+//   margin-left: calc(100vw * (180 / 1920));
+//   height: 45px;
+//   margin-top: 6.5px;
+//   width: 175px;
+
+//   @media screen and (max-width: 800px) {
+//     height: 25px;
+//     margin-left: 0;
+//     width: auto;
+//   }
+// }
+
+// .language-phone {
+//   cursor: pointer;
+//   opacity: 0.5;
+//   margin-right: calc(100vw * (180 / 1920));
+//   text-align: right;
+//   width: 175px;
+//   display: none;
+
+//   @media screen and (max-width: 800px) {
+//     margin-right: 0;
+//     width: auto;
+//     display: block;
+//   }
+// }
+
+// .language-desktop {
+//   margin-right: calc(100vw * (180 / 1920));
+//   text-align: right;
+//   width: 175px;
+//   display: flex;
+//   justify-content: flex-end;
+
+//   .option {
+//     cursor: pointer;
+//     margin-left: 15px;
+//     opacity: 0.5;
+//   }
+
+//   .active {
+//     opacity: 0.9;
+//   }
+
+//   .active:after {
+//     content: " ]";
+//   }
+
+//   .active:before {
+//     content: "[ ";
+//   }
+
+//   @media screen and (max-width: 800px) {
+//     display: none;
+//   }
+// }
+
+// .powered-text {
+//   @media screen and (max-width: 800px) {
+//     font-size: 14px;
+//   }
+// }

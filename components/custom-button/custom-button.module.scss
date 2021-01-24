@@ -1,0 +1,75 @@
+@mixin base-button {
+  border-color: white;
+  color: #fff;
+  font-family: "FuturaMedium", "Verdana", sans-serif;
+  border: none;
+  cursor: pointer;
+  border-radius: 36px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  transition-delay: 0s, 0s, 0s, 0s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  margin: 30px 0px;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+@mixin big-button {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  @include big-button();
+  @include base-button();
+  background: rgb(236, 65, 21);
+}
+
+.secondary-button {
+  @include big-button();
+  @include base-button();
+  color: rgb(236, 65, 21);
+  background: white;
+  border-color: rgb(236, 65, 21);
+  border-width: 2px;
+  border-image: none;
+  border-style: solid;
+}
+
+.custom-button-red {
+  @include big-button();
+  @include base-button();
+  background: red;
+}
+
+.custom-button-green {
+  @include big-button();
+  @include base-button();
+  background: green;
+}
+
+.small-button {
+  @include base-button();
+  display: flex;
+  margin-right: auto;
+  padding: 0 15px 0 15px;
+
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: grey;
+  letter-spacing: normal;
+}
