@@ -11,12 +11,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Adriana Nikolova a chess Grandmaster and coach
         </h1>
 
         <p className={styles.description}>

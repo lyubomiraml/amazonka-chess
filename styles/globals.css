@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "OpenSans";
 }
 
 a {
@@ -13,4 +12,29 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Cormorant Garamond";
+}
+h2 {
+  font-family: "Cormorant Garamond";
+}
+p {
+  font-family: "OpenSans";
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/fonts/Open_Sans/OpenSans-Light.ttf");
+  /* font-style: normal;
+  font-weight: 400; */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
+  /* font-style: medium;
+  font-weight: 500; */
+  font-display: swap;
 }
