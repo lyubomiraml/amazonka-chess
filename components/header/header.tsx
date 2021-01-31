@@ -1,6 +1,13 @@
 import styles from './header.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
+import CustomButton from '../custom-button/custom-button'
+
+
+const contact = () => {
+  return;
+};
+
 
 export default function Header() {
   return <div className={styles.header}>
@@ -11,6 +18,7 @@ export default function Header() {
       <Link href="/about">
         <a>About</a>
       </Link>
+      <CustomButton onClick={contact}>Say Hi</CustomButton>
     </div>
   </div>
 }
