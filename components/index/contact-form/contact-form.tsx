@@ -1,154 +1,149 @@
+import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
+import { emailJSCredentials } from "../../../email-js-credentials";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import styles from "./contact-form.module.scss";
-import Link from "next/link";
-import Image from "next/image";
-import CustomButton from "../../custom-button/custom-button";
 
-const contact = () => {
-  return;
+const ContactForm = () => {
+  const { register, errors, handleSubmit, reset } = useForm();
+
+  const toastifySuccess = () => {
+    toast("Form sent!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      className: "submit-feedback success",
+      toastId: "notifyToast",
+    });
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      const templateParams = {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+      };
+      await emailjs.send(
+        emailJSCredentials.serviceID,
+        emailJSCredentials.templateID,
+        templateParams,
+        emailJSCredentials.userID
+      );
+      reset();
+      toastifySuccess();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  return (
+    <div className="ContactForm">
+      <div className="container">
+        <div className={styles.grid}>
+          <div className={styles.col8}>
+            <h2>Contact form title</h2>
+          </div>
+        </div>
+
+        <div className="contactForm">
+          <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+            {/* Row 1 of form */}
+            <div className={styles.grid}>
+              <div className={styles.col4}>
+                <input
+                  type="text"
+                  name="name"
+                  ref={register({
+                    required: {
+                      value: true,
+                      message: "Please enter your name",
+                    },
+                    maxLength: {
+                      value: 30,
+                      message: "Please use 30 characters or less",
+                    },
+                  })}
+                  className={styles.forminput}
+                  placeholder="Name"
+                ></input>
+                {errors.name && (
+                  <span className="errorMessage">{errors.name.message}</span>
+                )}
+              </div>
+              <div className={styles.col4}>
+                <input
+                  type="email"
+                  name="email"
+                  ref={register({
+                    required: true,
+                    pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  })}
+                  className={styles.forminput}
+                  placeholder="Email address"
+                ></input>
+                {errors.email && (
+                  <span className="errorMessage">
+                    Please enter a valid email address
+                  </span>
+                )}
+              </div>
+            </div>
+            {/* Row 2 of form */}
+            <div className={styles.grid}>
+              <div className={styles.col8}>
+                <input
+                  type="text"
+                  name="subject"
+                  ref={register({
+                    required: {
+                      value: true,
+                      message: "Please enter a subject",
+                    },
+                    maxLength: {
+                      value: 75,
+                      message: "Subject cannot exceed 75 characters",
+                    },
+                  })}
+                  className={styles.forminput}
+                  placeholder="Subject"
+                ></input>
+                {errors.subject && (
+                  <span className="errorMessage">{errors.subject.message}</span>
+                )}
+              </div>
+            </div>
+            {/* Row 3 of form */}
+            <div className={styles.grid}>
+              <div className={styles.col8}>
+                <textarea
+                  rows={3}
+                  name="message"
+                  ref={register({
+                    required: true,
+                  })}
+                  className="form-control formInput"
+                  placeholder="Message"
+                ></textarea>
+                {errors.message && (
+                  <span className="errorMessage">Please enter a message</span>
+                )}
+              </div>
+            </div>
+            <button className={styles.submitbtn} type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+        <ToastContainer />
+      </div>
+    </div>
+  );
 };
 
-export default function ContactForm() {
-  return <div></div>;
-}
-
-/** Components */
-const Card = (props) => (
-  <div className="card">
-    {/*<div className="waves">
-    </div>*/}
-    {props.children}
-  </div>
-);
-
-const Form = (props) => <form className="form">{props.children}</form>;
-
-const TextInput = (props) => (
-  <div className="text-input">
-    <label
-      className={props.focus || props.value !== "" ? "label-focus" : ""}
-      htmlFor={props.name}
-    >
-      {props.label}
-    </label>
-    <input
-      className={props.focus || props.value !== "" ? "input-focus" : ""}
-      type="text"
-      name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-      onInput={props.onInput}
-      onFocus={props.onFocus}
-      onBlur={props.onBlur}
-    />
-  </div>
-);
-
-const TextArea = (props) => (
-  <div className="text-area">
-    <label
-      className={props.focus || props.value !== "" ? "label-focus" : ""}
-      htmlFor={props.name}
-    >
-      {props.label}
-    </label>
-    <textarea
-      className={props.focus || props.value !== "" ? "input-focus" : ""}
-      name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-      onInput={props.onInput}
-      onFocus={props.onFocus}
-      onBlur={props.onBlur}
-    />
-  </div>
-);
-
-const Button = (props) => <button className="button">{props.children}</button>;
-
-/** Root Component */
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: {
-        name: "name",
-        label: "Name",
-        value: "",
-        focus: false,
-      },
-      email: {
-        name: "email",
-        label: "Email",
-        value: "",
-        focus: false,
-      },
-      message: {
-        name: "message",
-        label: "Message",
-        value: "",
-        focus: false,
-      },
-    };
-  }
-
-  handleFocus(e) {
-    const name = e.target.name;
-    const state = Object.assign({}, this.state[name]);
-    state.focus = true;
-    this.setState({ [name]: state }, () => {
-      console.log(state);
-    });
-  }
-
-  handleBlur(e) {
-    const name = e.target.name;
-    const state = Object.assign({}, this.state[name]);
-    state.focus = false;
-    this.setState({ [name]: state }, () => {
-      console.log(state);
-    });
-  }
-
-  handleChange(e) {
-    const name = e.target.name;
-    const state = Object.assign({}, this.state[name]);
-    state.value = e.target.value;
-    this.setState({ [name]: state }, () => {
-      console.log(state);
-    });
-  }
-
-  render() {
-    const { name, email, message } = this.state;
-    return (
-      <div className="container">
-        <Card>
-          <h1>Send us a Message!</h1>
-          <Form>
-            <TextInput
-              {...name}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)}
-            />
-            <TextInput
-              {...email}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)}
-            />
-            <TextArea
-              {...message}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)}
-            />
-            <Button>Send</Button>
-          </Form>
-        </Card>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById("app"));
+export default ContactForm;

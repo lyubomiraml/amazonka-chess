@@ -53,9 +53,14 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <p>Follow me at:</p>
-      {socialLinks.map((socialLink) => {
+      {socialLinks.map((socialLink, index) => {
         return (
-          <a href={socialLink.link} target="_blank" rel="noopener noreferrer">
+          <a
+            key={index}
+            href={socialLink.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src={`/logos_png/${socialLink.icon}_${theme}.png`}
               alt={socialLink.alt}

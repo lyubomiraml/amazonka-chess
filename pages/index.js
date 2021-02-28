@@ -6,6 +6,7 @@ import CustomButton from "../components/custom-button/custom-button";
 import SocialProofSection from "../components/index/social-proof-section/social-proof-section";
 import RatingStatsSection from "../components/index/rating-stats-section/rating-stats-section";
 import LessonsInfoSection from "../components/index/lessons-info-section/lessons-info-section";
+import ContactForm from "../components/index/contact-form/contact-form";
 
 const contact = () => {
   return;
@@ -40,6 +41,7 @@ export default function Home() {
         <SocialProofSection />
         <RatingStatsSection />
         <LessonsInfoSection />
+        <ContactForm />
       </main>
     </div>
   );
