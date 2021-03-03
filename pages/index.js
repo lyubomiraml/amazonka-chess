@@ -22,7 +22,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.mainsection}>
-          <div>
+          <div className={styles.info}>
             <h1 className={styles.title}>
               Adriana Nikolova a chess Grandmaster and coach
             </h1>
@@ -31,12 +31,14 @@ export default function Home() {
             </p>
             <CustomButton onClick={contact}>Book a lesson</CustomButton>
           </div>
-          <Image
-            src="/logos_png/main_picture_2.png"
-            alt="Adriana Nikolova"
-            width="600px"
-            height="800px"
-          />
+          <div className={styles.mainimg}>
+            <Image
+              src="/logos_png/main_picture_2.png"
+              alt="Adriana Nikolova"
+              width="600px"
+              height="600vh"
+            />
+          </div>
         </div>
         <SocialProofSection />
         <RatingStatsSection />

@@ -20,8 +20,21 @@ h3 {
   font-family: "Cormorant Garamond";
 }
 
-p {
+p,
+button {
   font-family: "OpenSans";
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/fonts/Open_Sans/OpenSans-ExtraBold.ttf");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/fonts/Open_Sans/OpenSans-Bold.ttf");
+  font-weight: bold;
 }
 
 @font-face {

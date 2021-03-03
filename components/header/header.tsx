@@ -1,24 +1,26 @@
-import styles from './header.module.scss'
-import Link from 'next/link'
-import Image from 'next/image'
-import CustomButton from '../custom-button/custom-button'
-
+import styles from "./header.module.scss";
+import Link from "next/link";
+import Image from "next/image";
+import CustomButton from "../custom-button/custom-button";
 
 const contact = () => {
   return;
 };
 
-
 export default function Header() {
-  return <div className={styles.header}>
-    <Link href="/">
-      <Image src="/logo.png" alt="logo" width="50" height="50" />
-    </Link>
-    <div className={styles.rightNavigation} >
-      <Link href="/about">
-        <a>About</a>
+  return (
+    <div className={styles.header}>
+      <Link href="/">
+        <a className={styles.logo} />
       </Link>
-      <CustomButton onClick={contact}>Say Hi</CustomButton>
+      <div className={styles.navigation}>
+        <Link href="/about">
+          <a className={styles.navitem}>About</a>
+        </Link>
+        <CustomButton className="headerbtn" onClick={contact}>
+          Say Hi
+        </CustomButton>
+      </div>
     </div>
-  </div>
+  );
 }

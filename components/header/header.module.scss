@@ -1,25 +1,51 @@
+@import "../../styles/theme.scss";
+
 .header {
   height: 60px;
   width: 100%;
-  margin-bottom: 25px;
+  background-color: $darkBlue;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-  padding: 7px 30px;
 
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  background: white;
+  padding: 7px 20%;
 
   @media screen and (max-width: 800px) {
     height: 50px;
     margin-bottom: 20px;
     padding: 7px 15px;
   }
+}
+
+.logo {
+  background-image: url("../../public/logos_png/LOGO1_white.png");
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+html:not([data-scroll="0"]) .logo {
+  background-image: url("../../public/logos_png/LOGO1_black.png");
+}
+
+html:not([data-scroll="0"]) .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navitem {
+  padding: 20px;
+  color: white;
+}
+
+html:not([data-scroll="0"]) .navitem {
+  color: black;
 }
 
 // .brand-logo {
