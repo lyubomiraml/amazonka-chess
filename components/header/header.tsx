@@ -17,7 +17,7 @@ export default function Header() {
         <Link href="/about">
           <a className={styles.navitem}>About</a>
         </Link>
-        <CustomButton className="headerbtn" onClick={contact}>
+        <CustomButton className="header_btn" onClick={contact}>
           Say Hi
         </CustomButton>
       </div>

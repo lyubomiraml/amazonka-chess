@@ -5,7 +5,7 @@ import "./custom-button.module.scss";
 
 const CustomButton = ({ children, className, ...otherProps }) => (
   <button
-    className={className ? styles[className] : styles.custombtn}
+    className={className ? styles[className] : styles.custom_btn}
     {...otherProps}
   >
     {children}

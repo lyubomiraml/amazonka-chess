@@ -21,7 +21,9 @@ export default function LessonsInfoSection() {
             width="30px"
             height="30px"
           />
-          <CustomButton onClick={contact}>I want that!</CustomButton>
+          <CustomButton className="header_btn" onClick={contact}>
+            I want that!
+          </CustomButton>
         </div>
         <div className={styles.card}>
           <h2>10 hours</h2>
@@ -32,7 +34,9 @@ export default function LessonsInfoSection() {
             width="30px"
             height="30px"
           />
-          <CustomButton onClick={contact}>I want that!</CustomButton>
+          <CustomButton className="header_btn" onClick={contact}>
+            I want that!
+          </CustomButton>
         </div>
         <ul>
           <li>I use skype-like connections for chess lessons.</li>

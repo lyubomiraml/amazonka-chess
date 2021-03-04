@@ -20,31 +20,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <div className={styles.mainsection}>
-          <div className={styles.info}>
-            <h1 className={styles.title}>
-              Adriana Nikolova a chess Grandmaster and coach
-            </h1>
-            <p className={styles.description}>
-              I transform chess enthusiasts to Grandmasters
-            </p>
-            <CustomButton onClick={contact}>Book a lesson</CustomButton>
-          </div>
-          <div className={styles.mainimg}>
-            <Image
-              src="/logos_png/main_picture_2.png"
-              alt="Adriana Nikolova"
-              width="600px"
-              height="600vh"
-            />
-          </div>
+      <div className={styles.main_section}>
+        <div className={styles.main_img}></div>
+        <div className={styles.info}>
+          <h1 className={styles.title}>
+            Adriana Nikolova <br />a chess Grandmaster and coach
+          </h1>
+          <p className={styles.description}>
+            I transform chess enthusiasts to Grandmasters
+          </p>
+          <CustomButton className="main_btn" onClick={contact}>
+            Book a lesson
+          </CustomButton>
         </div>
-        <SocialProofSection />
-        <RatingStatsSection />
-        <LessonsInfoSection />
-        <ContactForm />
-      </main>
+      </div>
+      <SocialProofSection />
+      <RatingStatsSection />
+      <LessonsInfoSection />
+      <ContactForm />
     </div>
   );
 }

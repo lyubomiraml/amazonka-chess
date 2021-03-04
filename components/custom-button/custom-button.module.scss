@@ -5,12 +5,18 @@
   color: black;
 }
 
-.custombtn {
+@mixin big-button {
+  font-size: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.custom_btn {
   @include base-button-colors();
 }
 
-.headerbtn,
-.custombtn {
+.header_btn,
+.custom_btn {
   cursor: pointer;
   &:hover {
     opacity: 0.6;
@@ -21,11 +27,22 @@
   font-weight: bold;
 }
 
-.headerbtn {
+.main_btn {
+  @include big-button();
+
+  border: 10px solid;
+  color: white;
+  border-image-slice: 1;
+  border-width: 5px;
+  background: none;
+  border-image-source: linear-gradient(to left, $purple, #d53a9d);
+}
+
+.header_btn {
   border: 5px solid rgb(255, 255, 255);
   color: rgb(255, 255, 255);
 }
 
-html:not([data-scroll="0"]) .headerbtn {
+html:not([data-scroll="0"]) .header_btn {
   @include base-button-colors();
 }
