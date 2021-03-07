@@ -29,9 +29,9 @@ const cards: ICard[] = [
   },
   {
     comment:
-      " Adriana is a person of high integrity and she is very caring. Her knowledge of chess openings, middle games , strategy and end games is amazing. She helped me improve my performance in chess immensely. She helped me learn strategies, analyze my games and make decisions in difficult positions. I would recommend her for anyone looking for a professional and caring trainer. Thanks a world Adriana for all your excellent lessons.",
+      "Getting coached by Adriana has immensely helped me improve my tactics, positional assessment and endgame. Apart from regular lessons and homework, she also helped me in analyzing my own games thoroughly.",
     avatar: "",
-    name: "muizzuddin",
+    name: "arun_g_sastry",
   },
 ];
 

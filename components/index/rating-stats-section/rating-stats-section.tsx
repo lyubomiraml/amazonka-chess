@@ -32,7 +32,7 @@ const stats: IStat[] = [
 
 export default function RatingStatsSection() {
   return (
-    <div className={styles.grid}>
+    <div className={styles.stats_section}>
       <h1>Rating improvements:</h1>
       <table className={styles.table}>
         <tr>

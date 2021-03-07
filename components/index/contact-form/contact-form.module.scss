@@ -1,12 +1,23 @@
+@import "../../../styles/theme.scss";
+
+.contact_form_section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: $darkBlue;
+  width: 100%;
+  align-items: center;
+  color: white;
+  padding-bottom: 60px;
+  ::placeholder {
+    color: white;
+  }
+}
+
 .grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 1280px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 
 .col4,
@@ -22,6 +33,7 @@
   flex-basis: 100%;
   max-width: 100%;
 }
+
 @media only screen and (max-width: 768px) {
   .grid {
     flex-direction: column;
@@ -36,42 +48,25 @@
     max-width: 100%;
   }
 }
-.forminput {
+
+.form_input {
+  font-family: $secondary-font;
   height: 48px;
   width: 100%;
   border: none;
-  border-radius: 0px;
-  border-bottom: 1px solid #121212;
+  background: none;
+  border-bottom: 3px solid $green;
   margin: 8px 0px;
-  box-shadow: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 0px;
-  outline: none;
+  padding: 10px;
+  color: white;
 }
 
-// ::placeholder {
-//   color: #c8cbce;
-// }
-
-// ::-ms-input-placeholder {
-//   color: #c8cbce;
-// }
-
-.submitbtn {
-  padding: 0px 24px;
-  height: 48px;
-  background-color: #f83850;
-  margin: 16px 0px;
-  border: none;
-  border-radius: 0px;
-  cursor: pointer;
-  color: #fff;
-}
-
-.disabled {
-  background-color: #fff;
-  color: #121212;
-  cursor: auto;
-  padding-left: 0px;
+.form_textarea {
+  font-family: $secondary-font;
+  width: 100%;
+  background: none;
+  border: 3px solid $green;
+  margin: 8px 0px;
+  padding: 10px;
+  color: white;
 }

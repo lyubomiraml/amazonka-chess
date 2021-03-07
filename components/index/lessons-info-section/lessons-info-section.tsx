@@ -9,7 +9,7 @@ const contact = () => {
 
 export default function LessonsInfoSection() {
   return (
-    <div>
+    <div className={styles.lessons_section}>
       <h1>Lessons:</h1>
       <div className={styles.grid}>
         <div className={styles.card}>

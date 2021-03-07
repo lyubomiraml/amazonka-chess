@@ -1,0 +1,16 @@
+@import "../../../styles/theme.scss";
+.stats_section {
+  background-color: $green;
+  color: white;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  margin-bottom: 80px;
+  td {
+    padding: 10px;
+  }
+}

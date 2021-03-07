@@ -1,7 +1,10 @@
+@import "../../../styles/theme.scss";
 .social_proof_section {
+  padding: $page-padding;
   h1 {
     text-align: center;
   }
+  margin-bottom: 80px;
 }
 
 .grid {

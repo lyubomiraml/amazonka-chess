@@ -11,6 +11,11 @@
   font-weight: bold;
 }
 
+@mixin regular-button {
+  padding: 5px 20px;
+  font-weight: bold;
+}
+
 .custom_btn {
   @include base-button-colors();
 }
@@ -23,8 +28,7 @@
   }
   background: none;
   border: 5px solid black;
-  padding: 5px 20px;
-  font-weight: bold;
+  @include regular-button();
 }
 
 .main_btn {
@@ -36,6 +40,14 @@
   border-width: 5px;
   background: none;
   border-image-source: linear-gradient(to left, $purple, #d53a9d);
+}
+
+.contact_form_btn {
+  border: 10px solid;
+  color: white;
+  background: none;
+  border: 5px solid $green;
+  @include regular-button();
 }
 
 .header_btn {
