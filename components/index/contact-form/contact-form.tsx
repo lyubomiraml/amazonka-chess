@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
-import { emailJSCredentials } from "../../../email-js-credentials";
 import { ToastContainer, toast } from "react-toastify";
 import CustomButton from "../../custom-button/custom-button";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -32,10 +31,10 @@ const ContactForm = () => {
         message: data.message,
       };
       await emailjs.send(
-        emailJSCredentials.serviceID,
-        emailJSCredentials.templateID,
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
         templateParams,
-        emailJSCredentials.userID
+        process.env.NEXT_PUBLIC_EMAIL_USER_ID
       );
       reset();
       toastifySuccess();
