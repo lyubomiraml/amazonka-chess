@@ -35,22 +35,26 @@ export default function RatingStatsSection() {
     <div className={styles.stats_section}>
       <h1>Rating improvements:</h1>
       <table className={styles.table}>
-        <tr>
-          <th></th>
-          <th>From</th>
-          <th>To</th>
-          <th></th>
-        </tr>
-        {stats.map((stat) => {
-          return (
-            <tr>
-              <td>{stat.name}</td>
-              <td>{stat.from}</td>
-              <td>{stat.to}</td>
-              <td>{stat.time}</td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th></th>
+            <th>From</th>
+            <th>To</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {stats.map((stat, index) => {
+            return (
+              <tr key={index}>
+                <td>{stat.name}</td>
+                <td>{stat.from}</td>
+                <td>{stat.to}</td>
+                <td>{stat.time}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );

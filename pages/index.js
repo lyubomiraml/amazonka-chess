@@ -29,7 +29,7 @@ export default function Home() {
           <p className={styles.description}>
             I transform chess enthusiasts to Grandmasters
           </p>
-          <CustomButton className="main_btn" onClick={contact}>
+          <CustomButton href="#lessons" className="main_btn" onClick={contact}>
             Book a lesson
           </CustomButton>
         </div>

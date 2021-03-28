@@ -31,7 +31,11 @@ export default function Header() {
           </Link>
         )}
 
-        <CustomButton className="header_btn" onClick={contact}>
+        <CustomButton
+          href="#contact-form"
+          className="header_btn"
+          onClick={contact}
+        >
           Say Hi
         </CustomButton>
       </div>

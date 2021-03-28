@@ -27,12 +27,6 @@ const cards: ICard[] = [
     avatar: "",
     name: "muizzuddin",
   },
-  {
-    comment:
-      "Getting coached by Adriana has immensely helped me improve my tactics, positional assessment and endgame. Apart from regular lessons and homework, she also helped me in analyzing my own games thoroughly.",
-    avatar: "",
-    name: "arun_g_sastry",
-  },
 ];
 
 export default function SocialProofSection() {
@@ -40,10 +34,10 @@ export default function SocialProofSection() {
     <div className={styles.social_proof_section}>
       <h1>What my students say about me:</h1>
       <div className={styles.grid}>
-        {cards.map((card) => {
+        {cards.map((card, index) => {
           return (
-            <div className={styles.card}>
-              <h1>"</h1>
+            <div key={index} className={styles.card}>
+              <h3>"</h3>
               <p>{card.comment}</p>
               <h3>{card.name}</h3>
             </div>

@@ -3,13 +3,14 @@ import styles from "./custom-button.module.scss";
 
 import "./custom-button.module.scss";
 
-const CustomButton = ({ children, className, ...otherProps }) => (
-  <button
+const CustomButton = ({ children, className, href, ...otherProps }) => (
+  <a
+    href={href}
     className={className ? styles[className] : styles.custom_btn}
     {...otherProps}
   >
     {children}
-  </button>
+  </a>
 );
 
 export default CustomButton;

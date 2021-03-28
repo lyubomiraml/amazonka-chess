@@ -135,7 +135,7 @@ const ContactForm = () => {
               )}
             </div>
           </div>
-          <CustomButton className="contact_form_btn" type="submit">
+          <CustomButton href="" className="contact_form_btn" type="submit">
             Submit
           </CustomButton>
         </form>
