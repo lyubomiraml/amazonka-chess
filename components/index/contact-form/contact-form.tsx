@@ -47,7 +47,7 @@ const ContactForm = () => {
     <div className={styles.contact_form_section}>
       <div className={styles.grid}>
         <div className={styles.col8}>
-          <h2>Contact form title</h2>
+          <h2>Contact me</h2>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ const ContactForm = () => {
         <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           {/* Row 1 of form */}
           <div className={styles.grid}>
-            <div className={styles.col4}>
+            <div className={styles.col4} style={{ paddingRight: "40px;" }}>
               <input
                 type="text"
                 name="name"
@@ -135,9 +135,11 @@ const ContactForm = () => {
               )}
             </div>
           </div>
-          <CustomButton href="" className="contact_form_btn" type="submit">
-            Submit
-          </CustomButton>
+          <div className={styles.grid}>
+            <CustomButton href="" className="contact_form_btn" type="submit">
+              Submit
+            </CustomButton>
+          </div>
         </form>
       </div>
       <ToastContainer />

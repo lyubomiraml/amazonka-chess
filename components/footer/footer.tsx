@@ -1,5 +1,4 @@
 import styles from "./footer.module.scss";
-import Link from "next/link";
 import Image from "next/image";
 
 type SocialLink = {
@@ -47,7 +46,7 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
-const theme = "black";
+const theme = "white";
 
 export default function Footer() {
   return (
@@ -61,12 +60,10 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <img
               src={`/logos_png/${socialLink.icon}_${theme}.png`}
               alt={socialLink.alt}
               className={styles.logo}
-              width="20"
-              height="20"
             />
           </a>
         );

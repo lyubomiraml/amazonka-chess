@@ -9,12 +9,23 @@
 }
 
 .main_section {
+  padding: $page-padding;
   display: flex;
   justify-content: space-between;
   background-color: $darkBlue;
   width: 100%;
   align-items: center;
   color: white;
+}
+
+.main_picture {
+  height: 600px;
+  box-shadow: 30px -30px $green;
+  margin: 150px 0px;
+}
+
+.description {
+  text-align: center;
 }
 
 .info {
@@ -25,19 +36,7 @@
   p {
     font-size: 20px;
   }
-  margin-right: 20%;
-  // margin-left: 20%;
   flex-direction: column;
   display: flex;
   align-items: center;
-}
-
-.main_img {
-  background-image: url("../public/logos_png/main_picture_2.png");
-  height: 600px;
-  width: 400px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  // margin-right: 20%;
-  margin-left: 20%;
 }

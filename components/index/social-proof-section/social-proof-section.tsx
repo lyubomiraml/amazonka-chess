@@ -37,7 +37,6 @@ export default function SocialProofSection() {
         {cards.map((card, index) => {
           return (
             <div key={index} className={styles.card}>
-              <h3>"</h3>
               <p>{card.comment}</p>
               <h3>{card.name}</h3>
             </div>

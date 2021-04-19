@@ -21,13 +21,17 @@ export default function Home() {
       </Head>
 
       <div className={styles.main_section}>
-        <div className={styles.main_img}></div>
+        <img
+          className={styles.main_picture}
+          src={`/logos_png/main_picture.png`}
+        />
         <div className={styles.info}>
           <h1 className={styles.title}>
-            Adriana Nikolova <br />a chess Grandmaster and coach
+            WGM Adriana Nikolova <br /> Professional Chess Coach and Mentor
           </h1>
           <p className={styles.description}>
-            I transform chess enthusiasts to Grandmasters
+            I transform chess enthusiasts to Grandmasters. If you are looking to
+            improve your chess, you have to come to the right place.
           </p>
           <CustomButton href="#lessons" className="main_btn" onClick={contact}>
             Book a lesson

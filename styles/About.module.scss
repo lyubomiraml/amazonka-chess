@@ -1,44 +1,18 @@
 @import "./theme.scss";
 
-.container {
-  min-height: 100vh;
+.about_section {
+  background-color: hsla(0, 0%, 91%, 0.577);
+  padding: $page-padding;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  h2 {
+    padding-top: 100px;
+    padding-right: 80px;
+  }
 }
-
-.main_section {
-  display: flex;
-  justify-content: space-between;
-  background-color: $darkBlue;
-  height: 85vh;
-  width: 100%;
-  align-items: center;
-  color: white;
+.info_wrapper {
+  padding-bottom: 50px;
+  padding-top: 100px;
 }
 
 .info {
-  h1 {
-    font-size: $biggest-text;
-    text-align: center;
-  }
-  p {
-    font-size: 20px;
-  }
-
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  padding: $page-padding;
-}
-
-.main_img {
-  background-image: url("../public/logos_png/main_picture_2.png");
-  height: 600px;
-  width: 400px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  // margin-right: 20%;
-  margin-left: 20%;
 }
